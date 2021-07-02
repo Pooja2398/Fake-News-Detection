@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Fake News Detection</title>
+  <link rel="stylesheet" href='style.css'>
+</head>
+<body>
+    <div class="container">
+        <h1>Fake News Detector</h1>
+        <form action="{{ url_for('predict')}}" method="POST">
+            <textarea  name="message" rows="6" cols="50" required="required" style="font-size: 18pt"></textarea><br></br>
+            <p id="demo"></p>
+            <button onclick="myfunc()">Predict</button>
+            <script>
+                function myfunc(){
+                    if (prediction == 'FAKE'){
+                        document.getElementById("demo").innerHTML="FAKE NEWS";
+                    }else
+                        document.getElementById("demo").innerHTML="REAL NEWS";
+                    }      
+            </script>
+        </form>
+    </div>
+</body>
+</html>
